@@ -1,0 +1,89 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+  border: 1px solid #edf2f7;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-body {
+  padding: 1.5rem;
+  flex-grow: 1;
+}
+
+.card-title {
+  margin: 0 0 0.5rem 0;
+  color: #2d3748;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.card-subtitle {
+  color: #718096;
+  margin: 0 0 1rem 0;
+  font-style: italic;
+}
+
+.card-details {
+  background-color: #f7fafc;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.card-details p {
+  margin: 0 0 0.25rem 0;
+  color: #4a5568;
+}
+
+.card-details p:last-child {
+  margin-bottom: 0;
+}
+
+.card-actions {
+  display: flex;
+  padding: 1rem 1.5rem;
+  background-color: #f8fafc;
+  border-top: 1px solid #edf2f7;
+  gap: 0.5rem;
+}
+
+.card-actions button {
+  flex: 1;
+}
+
+.loading, .empty-state, .error {
+  text-align: center;
+  padding: 3rem;
+  background-color: #f7fafc;
+  border-radius: 12px;
+  color: #4a5568;
+  font-size: 1.1rem;
+}
+
+.error {
+  background-color: #fff5f5;
+  color: #e53e3e;
+  border: 1px solid #feb2b2;
+}

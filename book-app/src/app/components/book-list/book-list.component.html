@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="header">
+    <h2>Book Catalog</h2>
+    <a routerLink="/add" class="btn btn-primary">Add New Book</a>
+  </div>
+
+  <div *ngIf="isLoading" class="loading">
+    Loading books...
+  </div>
+
+  <div *ngIf="errorMessage" class="error">
+    {{ errorMessage }}
+  </div>
+
+  <div *ngIf="!isLoading && books.length === 0" class="empty-state">
+    No books found. Add some books to get started!
+  </div>
+
+  <div class="grid" *ngIf="!isLoading && books.length > 0">
+    <div class="card" *ngFor="let book of books">
+      <div class="card-body">
+        <h3 class="card-title">{{ book.title }}</h3>
+        <p class="card-subtitle">By {{ book.author }}</p>
+        <div class="card-details">
+          <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+          <p><strong>Published:</strong> {{ book.publicationDate | date:'mediumDate' }}</p>
+        </div>
+      </div>
+      <div class="card-actions">
+        <button class="btn btn-secondary" (click)="editBook(book.id)">Edit</button>
+        <button class="btn btn-danger" (click)="deleteBook(book.id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
